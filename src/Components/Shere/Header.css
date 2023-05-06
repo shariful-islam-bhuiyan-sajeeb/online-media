@@ -1,0 +1,13 @@
+/* .image {
+  background-image: linear-gradient(
+      rgba(22, 22, 22, 0.5),
+      rgba(22, 22, 22, 0.5)
+    ),
+    url("https://i.ibb.co/dJnNw05/Rectangle-2.png");
+
+  background-size: cover;
+  background-position: center;
+} */
+.brightness {
+  filter: brightness(40%);
+}
