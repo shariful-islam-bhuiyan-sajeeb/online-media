@@ -2,6 +2,7 @@ import React from "react";
 import { BsThreeDots } from "react-icons/bs";
 import { AiOutlineEye } from "react-icons/ai";
 import { BsFillShareFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const HomeCard = () => {
   const onlineCards = [
@@ -13,6 +14,7 @@ const HomeCard = () => {
       description:
         "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
       " userImg": "https://i.ibb.co/8KPqdJG/Sarthak-Kamra.png",
+      userImg: "https://i.ibb.co/8KPqdJG/Sarthak-Kamra.png",
       userName: "Sarthak Kamra",
       userViews: "1.4k views",
     },
@@ -50,7 +52,7 @@ const HomeCard = () => {
       calenderLogo: "https://i.ibb.co/n635hmM/job-bag.png",
       date: "Innovaccer Analytics Private Ltd.",
       locationLogo: "https://i.ibb.co/DzBB6nJ/location-logo.png",
-      location: "India",
+      location: "Noida, India",
       visit: "Apply on Timesjobs",
       color: "text-[#02B875]",
       userImg: "https://i.ibb.co/9vm6Rx4/Joseph-Gray.png",
@@ -66,65 +68,68 @@ const HomeCard = () => {
   // }, []);
 
   return (
-    <div className="gap-y-6">
+    <div className="">
       {onlineCards?.map((onlineCard) => (
-        <div className="card w-2/4 mx-auto border-2  shadow-xl">
-          <div className="w-full">
+        <div className="  w-full mx-auto   relative">
+          <div className="w-full mt-10 border-2 ">
             <figure>
-              <img className="w-full" src={onlineCard?.picture} alt="" />
+              <img className="w-full " src={onlineCard?.picture} alt="" />
             </figure>
-            <div className=" text-left md:px-8 py-4 space-y-3 ">
-              <h2 className="card-title md:text-2xl">{onlineCard?.category}</h2>
+            <div className=" text-left sm:px-3 px-2 md:py-4 py-2 xl:space-y-3 md:space-y-2 space-y-1 ">
+              <h2 className="card-title md:text-2xl text-xl">
+                {onlineCard?.category}
+              </h2>
               <div className="flex items-center justify-between">
-                <p className="md:text-3xl font-semibold font-serif ">
-                  {onlineCard?.category?.length > 60
+                <p className="w-10/12  xl:text-2xl lg:text-xl sm:text-lg text-md  md:py-2 py-0 overflow-hidden  font-semibold font-serif ">
+                  {onlineCard?.title?.length > 60
                     ? onlineCard?.title?.slice(0, 60) + "..."
                     : onlineCard?.title}
                 </p>
-                <div className="md:text-4xl font-bold text-black">
-                  {/* <BsThreeDots /> */}
-                  <div className="dropdown">
-                    <label tabIndex={0} className="m-28  ">
-                      <BsThreeDots className=" absolute right-2 xl:top-4 lg:top-10 md:top-18 cursor-pointer  hover:bg-[#BFBFC0] text-right  xl:text-6xl lg:text-2xl text-2xl font-bold text-black" />
-                    </label>
-                    <ul
-                      tabIndex={0}
-                      className="menu menu-compact dropdown-content mt-20 p-2 border-2 shadow bg-gray-200 rounded-box w-40"
-                    >
-                      <li>
-                        <a>Homepage</a>
-                      </li>
-                      <li>
-                        <a>Portfolio</a>
-                      </li>
-                      <li>
-                        <a>About</a>
-                      </li>
-                    </ul>
-                  </div>
+                <div className="dropdown  ">
+                  <label tabIndex={0} className=" ">
+                    <BsThreeDots className="cursor-pointer absolute md:right-2 -right-1 -top-4  rounded-md hover:bg-[#BFBFC0]  xl:text-4xl lg:text-2xl text-2xl font-bold text-black" />
+                  </label>
+                  <ul
+                    tabIndex={0}
+                    className="menu menu-compact dropdown-content text-center absolute right-1 top-5 border-2 xl:text-2xl lg:text-xl md:text-lg text-md px-2 mt-0  text-black bg-gray-100 rounded-box xl:w-44 lg:w-36 md:w-32 sm:w-28 w-24 mx-auto"
+                  >
+                    <li className="">
+                      <Link className="">Edit</Link>
+                    </li>
+                    <li>
+                      <Link>Report</Link>
+                    </li>
+                    <li>
+                      <Link>Option</Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
               <p
                 className={
-                  onlineCard?.description ? "text-2xl text-[#5C5C5C]" : "p-0"
+                  onlineCard?.description
+                    ? "lg:text-2xl sm:text-lg text-md text-[#5C5C5C]"
+                    : "p-0"
                 }
               >
                 {onlineCard?.description}
               </p>
               {/* <p className={}></p> */}
               {/*================== "date" & location section is here */}
-              <div className="flex items-center justify-start md:gap-x-8 ">
+              <div className="flex items-center justify-start  py-0 lg:gap-x-16 md:gap-x-8 sm:gap-x-6 gap-x-4 ">
                 <div className="flex items-center md:text-2xl font-semibold gap-x-2 ">
-                  <img className="w-5" src={onlineCard?.calenderLogo} alt="" />
-                  <p className="">{onlineCard?.date}</p>
+                  <img className="w-4" src={onlineCard?.calenderLogo} alt="" />
+                  <p className="lg:text-xl md:text-lg text-md">
+                    {onlineCard?.date}
+                  </p>
                 </div>
                 <div className="flex items-center  gap-x-2">
                   <img
-                    className="md:w-4"
+                    className="md:w-4 w-3"
                     src={onlineCard?.locationLogo}
                     alt=""
                   />
-                  <p className="md:text-xl font-serif font-semibold">
+                  <p className="lg:text-xl  sm:text-md text-sm font-serif font-semibold">
                     {onlineCard?.location}
                   </p>
                 </div>
@@ -147,19 +152,23 @@ const HomeCard = () => {
               <div className=" flex items-center card-actions justify-between md:pt-2 pt-1 lg:pb-8 md:pb-6 sm:pb-4 pb-2 ">
                 <div className="flex items-center md:gap-x-3 gap-x-2">
                   <img
-                    className="md:w-20 sm:w-16 w-12 rounded-full"
+                    className="lg:w-20 md:w-16 sm:w-12 w-10 rounded-full"
                     src={onlineCard?.userImg}
                     alt=""
                   />
-                  <p className="md:text-2xl text-xl font-bold ">
-                    {onlineCard?.userName}
-                  </p>
+                  <div>
+                    <p className="lg:text-2xl md:text-xl sm:text-lg text-md font-semibold ">
+                      {onlineCard?.userName}
+                    </p>
+                    <p className="md:hidden">{onlineCard?.userViews}</p>
+                  </div>
                 </div>
-                <div className="flex items-center md:text-xl text-lg md:gap-x-3 gap-x-2">
-                  <AiOutlineEye />
-                  <p>{onlineCard?.userViews}</p>
-                  <div className="md:p-3 p-2 md:mx-4 mx-2 bg-[#EDEEF0]">
-                    <BsFillShareFill />
+                <div className="flex items-center md:text-xl text-lg gap-x-2">
+                  <AiOutlineEye className="hidden md:block" />
+                  <p className="hidden md:block">{onlineCard?.userViews}</p>
+                  <div className="flex items-center md:gap-x-0 gap-x-2 lg:p-3 md:p-2 p-1 sm:px-2 px-1  lg:mx-4 sm:mx-2 mx-1 rounded-md  bg-[#EDEEF0]">
+                    <BsFillShareFill className="" />
+                    <p className="md:hidden">share</p>
                   </div>
                 </div>
               </div>
